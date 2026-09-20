@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.YishujiaDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.YishujiaEntity" id="yishujiaMap">
+        <result property="xingming" column="xingming"/>
+        <result property="tupian" column="tupian"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="nianling" column="nianling"/>
+        <result property="chushengdi" column="chushengdi"/>
+        <result property="biyeyuanxiao" column="biyeyuanxiao"/>
+        <result property="xiquchengjiu" column="xiquchengjiu"/>
+        <result property="xiquzuopin" column="xiquzuopin"/>
+        <result property="gerenjianjie" column="gerenjianjie"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.YishujiaView" >
+
+		SELECT  yishujia.* FROM yishujia  yishujia 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.YishujiaView" >
+		SELECT * FROM yishujia  yishujia <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
